@@ -1,0 +1,11 @@
+target/
+*.iml
+.idea/
+*.log
+*.md
+*.class
+*.jar
+*.war
+*.db
+*.bat
+*.cmd
