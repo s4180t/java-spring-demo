@@ -1,12 +1,11 @@
 package com.saibot.springdemo;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * REST controller that handles hello endpoint.
@@ -19,10 +18,19 @@ public class HelloController {
    *
    * @return a HelloResult object with result set to "banana"
    */
-  @Operation(summary = "Returns a banana result", responses = {
-      @ApiResponse(description = "Successful response", responseCode = "200",
-        content = @Content(mediaType = "application/json", schema = @Schema(implementation = HelloResult.class)))
-  })
+  @Operation(
+      summary = "Returns a banana result",
+      responses = {
+          @ApiResponse(
+              description = "Successful response",
+              responseCode = "200",
+              content = @Content(
+                  mediaType = "application/json",
+                  schema = @Schema(implementation = HelloResult.class)
+              )
+          )
+      }
+  )
   @GetMapping("/hello")
   public HelloResult hello() {
     return new HelloResult("banana");
