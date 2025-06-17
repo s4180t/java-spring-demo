@@ -3,9 +3,7 @@ package com.saibot.springdemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * Main class for the Spring Boot demo application.
- */
+/** Main class for the Spring Boot demo application. */
 @SpringBootApplication
 public class SpringDemoApplication {
 
@@ -17,5 +15,4 @@ public class SpringDemoApplication {
   public static void main(String[] args) {
     SpringApplication.run(SpringDemoApplication.class, args);
   }
-
 }

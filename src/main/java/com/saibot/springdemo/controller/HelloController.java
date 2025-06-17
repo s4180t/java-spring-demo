@@ -8,9 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * REST controller that handles hello endpoint.
- */
+/** REST controller that handles hello endpoint. */
 @RestController
 public class HelloController {
 
@@ -22,16 +20,14 @@ public class HelloController {
   @Operation(
       summary = "Returns a banana result",
       responses = {
-          @ApiResponse(
-              description = "Successful response",
-              responseCode = "200",
-              content = @Content(
-                  mediaType = "application/json",
-                  schema = @Schema(implementation = HelloResult.class)
-              )
-          )
-      }
-  )
+        @ApiResponse(
+            description = "Successful response",
+            responseCode = "200",
+            content =
+                @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(implementation = HelloResult.class)))
+      })
   @GetMapping("/hello")
   public HelloResult hello() {
     return new HelloResult("banana");

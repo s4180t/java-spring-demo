@@ -2,9 +2,7 @@ package com.saibot.springdemo.dto;
 
 import java.time.Instant;
 
-/**
- * DTO for the /hello endpoint result.
- */
+/** DTO for the /hello endpoint result. */
 public class HelloResult {
   private String result;
   private final String dateUtc = Instant.now().toString();

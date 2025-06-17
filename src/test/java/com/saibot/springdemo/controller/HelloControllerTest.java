@@ -14,15 +14,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-/**
- * Unit tests for {@link HelloController}.
- */
+/** Unit tests for {@link HelloController}. */
 @SpringBootTest
 @AutoConfigureMockMvc
 public class HelloControllerTest {
 
-  @Autowired
-  private MockMvc mockMvc;
+  @Autowired private MockMvc mockMvc;
 
   /**
    * Tests that the /hello endpoint returns {"result": "banana", "dateUtc": ...} in JSON format.
@@ -31,12 +28,14 @@ public class HelloControllerTest {
    */
   @Test
   void helloEndpointReturnsBanana() throws Exception {
-    MvcResult result = mockMvc.perform(get("/hello"))
-        .andExpect(status().isOk())
-        .andExpect(jsonPath("$.result").value("banana"))
-        .andExpect(jsonPath("$.dateUtc").exists())
-        .andExpect(jsonPath("$.dateUtc").isString())
-        .andReturn();
+    MvcResult result =
+        mockMvc
+            .perform(get("/hello"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.result").value("banana"))
+            .andExpect(jsonPath("$.dateUtc").exists())
+            .andExpect(jsonPath("$.dateUtc").isString())
+            .andReturn();
 
     // Validate that dateUtc is a valid ISO-8601 UTC date
     String response = result.getResponse().getContentAsString();
