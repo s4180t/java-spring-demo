@@ -1,5 +1,6 @@
 package com.saibot.springdemo.controller;
 
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -30,7 +31,7 @@ public class HelloControllerTest {
   void helloEndpointReturnsBanana() throws Exception {
     MvcResult result =
         mockMvc
-            .perform(get("/hello"))
+            .perform(get("/hello").with(user("user").roles("USER")))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.result").value("banana"))
             .andExpect(jsonPath("$.dateUtc").exists())
@@ -43,5 +44,10 @@ public class HelloControllerTest {
     JsonNode node = mapper.readTree(response);
     String dateUtc = node.get("dateUtc").asText();
     Instant.parse(dateUtc); // will throw if not valid ISO-8601
+  }
+
+  @Test
+  void helloEndpointRequiresAuthentication() throws Exception {
+    mockMvc.perform(get("/hello")).andExpect(status().isUnauthorized());
   }
 }
