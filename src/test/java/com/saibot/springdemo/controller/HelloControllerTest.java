@@ -50,4 +50,11 @@ public class HelloControllerTest {
   void helloEndpointRequiresAuthentication() throws Exception {
     mockMvc.perform(get("/hello")).andExpect(status().isUnauthorized());
   }
+
+  @Test
+  void notFoundReturns404() throws Exception {
+    mockMvc
+        .perform(get("/nonexistent").with(user("user").roles("USER")))
+        .andExpect(status().isNotFound());
+  }
 }
