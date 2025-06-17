@@ -1,4 +1,4 @@
-package com.saibot.springdemo;
+package com.saibot.springdemo.dto;
 
 import java.time.Instant;
 

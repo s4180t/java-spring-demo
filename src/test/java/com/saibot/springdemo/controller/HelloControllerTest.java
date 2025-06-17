@@ -1,4 +1,4 @@
-package com.saibot.springdemo;
+package com.saibot.springdemo.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -25,7 +25,7 @@ public class HelloControllerTest {
   private MockMvc mockMvc;
 
   /**
-   * Tests that the /hello endpoint returns {"result": "banana"} in JSON format.
+   * Tests that the /hello endpoint returns {"result": "banana", "dateUtc": ...} in JSON format.
    *
    * @throws Exception if the request fails
    */

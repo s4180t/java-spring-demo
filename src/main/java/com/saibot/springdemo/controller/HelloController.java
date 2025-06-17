@@ -1,5 +1,6 @@
-package com.saibot.springdemo;
+package com.saibot.springdemo.controller;
 
+import com.saibot.springdemo.dto.HelloResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
