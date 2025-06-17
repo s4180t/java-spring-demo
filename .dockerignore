@@ -1,4 +1,5 @@
 target/
+.git/
 *.iml
 .idea/
 *.log
@@ -9,3 +10,5 @@ target/
 *.db
 *.bat
 *.cmd
+.DS_Store
+node_modules/
