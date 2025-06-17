@@ -1,7 +1,7 @@
 package com.saibot.springdemo;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ public class HelloControllerTest {
   private MockMvc mockMvc;
 
   /**
-   * Tests that the /hello endpoint returns "banana".
+   * Tests that the /hello endpoint returns {"result": "banana"} in JSON format.
    *
    * @throws Exception if the request fails
    */
@@ -29,6 +29,6 @@ public class HelloControllerTest {
   void helloEndpointReturnsBanana() throws Exception {
     mockMvc.perform(get("/hello"))
         .andExpect(status().isOk())
-        .andExpect(content().string("banana"));
+        .andExpect(jsonPath("$.result").value("banana"));
   }
 }
