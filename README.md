@@ -1,5 +1,6 @@
 # Java Spring Demo
 
+![Build](https://github.com/s4180t/java-spring-demo/actions/workflows/ci.yml/badge.svg)
 [![codecov](https://codecov.io/gh/s4180t/java-spring-demo/branch/main/graph/badge.svg)](https://codecov.io/gh/s4180t/java-spring-demo)
 
 This is a demo Spring Boot project for Java, featuring:
