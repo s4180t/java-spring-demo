@@ -29,7 +29,7 @@
 	<properties>
 		<java.version>17</java.version>
 		<springdoc-openapi.version>2.8.9</springdoc-openapi.version>
-		<tomcat-embed-core.version>10.1.42</tomcat-embed-core.version>
+		<tomcat-embed-core.version>10.1.44</tomcat-embed-core.version>
 		<spring-web.version>6.2.8</spring-web.version>
 		<maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
 		<spotless-maven-plugin.version>2.44.5</spotless-maven-plugin.version>
